@@ -28,7 +28,6 @@ jobs:
         with:
           node-version: 10
           registry-url: https://registry.npmjs.org/
-          scope: 'linzf'
       - run: npm config set '//registry.npmjs.org/:_authToken' '${{secrets.npm_token}}'
       - run: npm publish --access public
         env:
