@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 10
+          node-version: 12
       - run: npm install
       - run: npm run dev
 
@@ -26,9 +26,9 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 10
+          node-version: 12
           registry-url: https://registry.npmjs.org/
-      - run: npm config set '//registry.npmjs.org/:_authToken' '${{secrets.npm_token_60b8}}'
+      - run: npm config set '//registry.npmjs.org/:_authToken' '${{secrets.npm_token}}'
       - run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token_60b8}}
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
